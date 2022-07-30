@@ -44,8 +44,6 @@ public class Hooks {
         DB_Util.createConnection();
         System.out.println("CONNECTION IS SUCCESSFUL");
 
-
-
     }
 
     @After("@db")
