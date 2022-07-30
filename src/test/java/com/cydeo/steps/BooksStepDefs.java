@@ -87,6 +87,21 @@ public class BooksStepDefs {
 
         Map<String, String> rowMap = DB_Util.getRowMap(1);
 
+        String expectedBookName = rowMap.get("name");
+        String expectedAuthorName = rowMap.get("author");
+        String expectedISBN = rowMap.get("isbn");
+        String expectedDesc = rowMap.get("description");
+        String expectedYear = rowMap.get("year");
+
+        //Assertion
+
+        Assert.assertEquals(expectedBookName,actualBookName);
+        Assert.assertEquals(expectedAuthorName,actualAuthorName);
+        Assert.assertEquals(expectedISBN,actualISBN);
+        Assert.assertEquals(expectedDesc,actualDesc);
+        Assert.assertEquals(expectedYear,actualYear);
+
+
 
     }
 
