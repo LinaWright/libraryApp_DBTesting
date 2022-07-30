@@ -3,9 +3,11 @@ package com.cydeo.steps;
 import com.cydeo.pages.DashBoardPage;
 import com.cydeo.pages.LoginPage;
 import com.cydeo.utility.BrowserUtil;
+import com.cydeo.utility.DB_Util;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class DashboardStepDefs
 {
@@ -34,6 +36,35 @@ public class DashboardStepDefs
     }
     @Then("the informations should be same with database")
     public void the_informations_should_be_same_with_database() {
+
+        //1.Make a conn
+        DB_Util.createConnection();
+
+        //USERS
+
+                //2.Run Query
+                DB_Util.runQuery("select count(*) from users");
+
+                //3.Store data
+                String expectedUsers = DB_Util.getFirstRowFirstColumn();
+
+                //4.Make an assertion
+                Assert.assertEquals(expectedUsers,actualUserNumbers);
+
+
+        //BOOKS
+
+
+            //2.Run Query
+
+            //3.Store data
+
+            //4.Make an assertion
+
+
+        //5.Close the conn
+        DB_Util.destroy();
+
 
     }
 
