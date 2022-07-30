@@ -38,7 +38,8 @@ public class DashboardStepDefs
     public void the_informations_should_be_same_with_database() {
 
         //1.Make a conn
-        DB_Util.createConnection();
+        // DB_Util.createConnection();
+        // since we have Before After with custom hooks we dont need this step any more
 
         //USERS
 
@@ -72,7 +73,8 @@ public class DashboardStepDefs
                 Assert.assertEquals(expectedBookBorrowedNumber,actualBorrowedBookNumbers);
 
         //5.Close the conn
-        DB_Util.destroy();
+        //DB_Util.destroy();
+        // since we have Before After with custom hooks we dont need this step any more
 
 
     }
