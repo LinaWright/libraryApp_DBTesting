@@ -4,6 +4,7 @@ import com.cydeo.pages.DashBoardPage;
 import com.cydeo.pages.LoginPage;
 import com.cydeo.utility.BrowserUtil;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class DashboardStepDefs
@@ -29,6 +30,10 @@ public class DashboardStepDefs
         System.out.println("actualBookNumbers = " + actualBookNumbers);
         actualBorrowedBookNumbers = dashBoardPage.borrowedBooksNumber.getText();
         System.out.println("actualBorrowedBookNumbers = " + actualBorrowedBookNumbers);
+
+    }
+    @Then("the informations should be same with database")
+    public void the_informations_should_be_same_with_database() {
 
     }
 
