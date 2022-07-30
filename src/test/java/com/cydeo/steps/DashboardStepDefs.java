@@ -56,11 +56,20 @@ public class DashboardStepDefs
 
 
             //2.Run Query
-
+                DB_Util.runQuery("select count(*) from books");
             //3.Store data
-
+                 String expectedBooks = DB_Util.getCellValue(1, 1);
             //4.Make an assertion
+                Assert.assertEquals(expectedBooks,actualBookNumbers);
 
+        //BORROWED BOOKS
+
+            //2.Run Query
+                DB_Util.runQuery("select count(*) from book_borrow where is_returned=0");
+            //3.Store data
+                String expectedBookBorrowedNumber = DB_Util.getFirstRowFirstColumn();
+            //4.Make an assertion
+                Assert.assertEquals(expectedBookBorrowedNumber,actualBorrowedBookNumbers);
 
         //5.Close the conn
         DB_Util.destroy();
