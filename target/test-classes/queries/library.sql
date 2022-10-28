@@ -10,6 +10,4 @@ where name ='Clean Code';
 select count(id) from users;
 select count(distinct id) from users;
 select id from users;
-select * from users;
-select name,author,isbn,description,year from books where name ='"+bookName+"';
 
